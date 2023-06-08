@@ -1,0 +1,40 @@
+
+query LocationAndSearchTermQuery($location: String!, $term: String!, $radius: Float!, $limit: Int!, $offset: Int!) {
+    search(
+        term: $term
+        location: $location
+        radius: $radius
+        limit: $limit
+        offset: $offset
+    ) {
+        total
+        business {
+            location {
+                address1
+                address2
+                address3
+                city
+                postal_code
+                state
+                formatted_address
+            }
+            coordinates {
+                latitude
+                longitude
+            }
+            display_phone
+            distance
+            hours {
+                hours_type
+                is_open_now
+            }
+            review_count
+            photos
+            id
+            name
+            rating
+            url
+        }
+    }
+}
+
